@@ -1,6 +1,10 @@
-import { initialFormData } from "@/data";
 import { SignUpCard } from "@/ui/cards/auth/SignUpCard";
+import { PageContainer } from "@/ui/PageContainer";
 
 export default function SignUpPage() {
-  return <SignUpCard initialFormData={initialFormData}></SignUpCard>;
+  return (
+    <PageContainer isCentered={true}>
+      <SignUpCard />
+    </PageContainer>
+  );
 }
