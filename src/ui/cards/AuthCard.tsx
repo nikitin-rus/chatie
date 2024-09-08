@@ -1,4 +1,4 @@
-import { Card, Switch, Typography } from "@mui/material";
+import { Card, Heading } from "@chakra-ui/react";
 import { PropsWithChildren } from "react";
 
 interface AuthCardProps extends PropsWithChildren {
@@ -8,19 +8,16 @@ interface AuthCardProps extends PropsWithChildren {
 export function AuthCard({ title, children }: AuthCardProps) {
   return (
     <Card
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        rowGap: "2rem",
-        maxWidth: "375px",
-        width: "100%",
-        p: "2rem",
-        borderRadius: "15px",
-      }}
+      display="flex"
+      flexDir="column"
+      alignItems="center"
+      rowGap="2rem"
+      maxWidth="375px"
+      width="100%"
+      p="2rem"
+      borderRadius="15px"
     >
-      <Typography variant="h2">{title}</Typography>
-
+      <Heading as="h1">{title}</Heading>
       {children}
     </Card>
   );

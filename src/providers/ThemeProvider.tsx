@@ -1,16 +1,9 @@
 "use client";
 
+import { theme } from "@/theme/theme";
+import { ChakraProvider } from "@chakra-ui/react";
 import { PropsWithChildren } from "react";
-import { CssBaseline, ThemeProvider as MuiThemeProvider } from "@mui/material";
-import { theme } from "@/theme";
 
-interface Props extends PropsWithChildren {}
-
-export default function ThemeProvider({ children }: Props) {
-  return (
-    <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      {children}
-    </MuiThemeProvider>
-  );
+export default function ThemeProvider({ children }: PropsWithChildren) {
+  return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
 }

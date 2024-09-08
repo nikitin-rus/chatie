@@ -7,12 +7,12 @@ import regExps from "@/regExps";
 import { Auth } from "@/models";
 import {
   Button,
+  Flex,
   FormControl,
-  OutlinedInput,
-  Box,
+  FormErrorMessage,
   FormLabel,
-  FormHelperText,
-} from "@mui/material";
+  Input,
+} from "@chakra-ui/react";
 
 export interface SignInFormProps {
   initialFormData?: Auth;
@@ -37,21 +37,24 @@ export function SignInForm({ initialFormData }: SignInFormProps) {
     }
   };
 
+  console.log(errors);
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
-      <Box sx={{ display: "flex", flexDirection: "column", rowGap: "2rem" }}>
-        <Box
-          sx={{ display: "flex", flexDirection: "column", rowGap: "1.5rem" }}
-        >
+      <Flex flexDir="column" rowGap="2rem">
+        <Flex flexDir="column" rowGap="1.5rem">
           <FormControl
-            sx={{ display: "flex", flexDirection: "column", rowGap: "0.5rem" }}
-            error={!!errors.email}
-            required
+            display="flex"
+            flexDir="column"
+            rowGap="0.5rem"
+            isInvalid={!!errors.email}
+            isRequired={true}
           >
-            <FormLabel>{t("forms.inputs.email")}</FormLabel>
+            <FormLabel textStyle="body4">{t("forms.inputs.email")}</FormLabel>
 
-            <OutlinedInput
+            <Input
               type="email"
+              placeholder={t("forms.inputs.email")}
               {...register("email", {
                 required: t("forms.errors.fieldIsRequired", {
                   fieldName: t("forms.inputs.email"),
@@ -66,19 +69,22 @@ export function SignInForm({ initialFormData }: SignInFormProps) {
             />
 
             {errors.email && (
-              <FormHelperText>{errors.email.message}</FormHelperText>
+              <FormErrorMessage>{errors.email.message}</FormErrorMessage>
             )}
           </FormControl>
 
           <FormControl
-            sx={{ display: "flex", flexDirection: "column", rowGap: "0.5rem" }}
-            error={!!errors.password}
-            required
+            display="flex"
+            flexDir="column"
+            rowGap="0.5rem"
+            isInvalid={!!errors.password}
+            isRequired={true}
           >
             <FormLabel>{t("forms.inputs.password")}</FormLabel>
 
-            <OutlinedInput
+            <Input
               type="password"
+              placeholder={t("forms.inputs.password")}
               {...register("password", {
                 required: t("forms.errors.fieldIsRequired", {
                   fieldName: t("forms.inputs.password"),
@@ -107,19 +113,19 @@ export function SignInForm({ initialFormData }: SignInFormProps) {
             />
 
             {errors.password && (
-              <FormHelperText>{errors.password.message}</FormHelperText>
+              <FormErrorMessage>{errors.password.message}</FormErrorMessage>
             )}
           </FormControl>
-        </Box>
+        </Flex>
 
         <Button
-          variant="contained"
           type="submit"
-          disabled={!isValid || isSubmitting}
+          isDisabled={!isValid || isSubmitting}
+          isLoading={isSubmitting}
         >
           {t("forms.buttons.submit")}
         </Button>
-      </Box>
+      </Flex>
     </form>
   );
 }

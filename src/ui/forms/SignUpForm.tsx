@@ -9,10 +9,10 @@ import {
   Box,
   Button,
   FormControl,
-  FormHelperText,
+  FormErrorMessage,
   FormLabel,
-  OutlinedInput,
-} from "@mui/material";
+  Input,
+} from "@chakra-ui/react";
 
 export interface SignUpFormProps {
   initialFormData?: Auth;
@@ -39,18 +39,18 @@ export function SignUpForm({ initialFormData }: SignUpFormProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
-      <Box sx={{ display: "flex", flexDirection: "column", rowGap: "2rem" }}>
-        <Box
-          sx={{ display: "flex", flexDirection: "column", rowGap: "1.5rem" }}
-        >
+      <Box display="flex" flexDirection="column" rowGap="2rem">
+        <Box display="flex" flexDirection="column" rowGap="1.5rem">
           <FormControl
-            sx={{ display: "flex", flexDirection: "column", rowGap: "0.5rem" }}
-            error={!!errors.email}
-            required
+            display="flex"
+            flexDirection="column"
+            rowGap="0.5rem"
+            isInvalid={!!errors.email}
+            isRequired={true}
           >
             <FormLabel>{t("forms.inputs.email")}</FormLabel>
 
-            <OutlinedInput
+            <Input
               type="email"
               {...register("email", {
                 required: t("forms.errors.fieldIsRequired", {
@@ -66,18 +66,20 @@ export function SignUpForm({ initialFormData }: SignUpFormProps) {
             />
 
             {errors.email && (
-              <FormHelperText>{errors.email.message}</FormHelperText>
+              <FormErrorMessage>{errors.email.message}</FormErrorMessage>
             )}
           </FormControl>
 
           <FormControl
-            sx={{ display: "flex", flexDirection: "column", rowGap: "0.5rem" }}
-            error={!!errors.password}
-            required
+            display="flex"
+            flexDir="column"
+            rowGap="0.5rem"
+            isInvalid={!!errors.password}
+            isRequired={true}
           >
             <FormLabel>{t("forms.inputs.password")}</FormLabel>
 
-            <OutlinedInput
+            <Input
               type="password"
               {...register("password", {
                 required: t("forms.errors.fieldIsRequired", {
@@ -107,15 +109,15 @@ export function SignUpForm({ initialFormData }: SignUpFormProps) {
             />
 
             {errors.password && (
-              <FormHelperText>{errors.password.message}</FormHelperText>
+              <FormErrorMessage>{errors.password.message}</FormErrorMessage>
             )}
           </FormControl>
         </Box>
 
         <Button
-          variant="contained"
           type="submit"
-          disabled={!isValid || isSubmitting}
+          isDisabled={!isValid || isSubmitting}
+          isLoading={isSubmitting}
         >
           {t("forms.buttons.submit")}
         </Button>

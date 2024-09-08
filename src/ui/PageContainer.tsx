@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container } from "@chakra-ui/react";
 import { PropsWithChildren } from "react";
 
 interface Props extends PropsWithChildren {
@@ -8,15 +8,13 @@ interface Props extends PropsWithChildren {
 export function PageContainer({ isCentered = false, children }: Props) {
   return (
     <Container
-      maxWidth="lg"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: isCentered ? "center" : "stretch",
-        justifyContent: isCentered ? "center" : "flex-start",
-        width: "100vw",
-        height: "100vh",
-      }}
+      display="flex"
+      flexDir="column"
+      alignItems={isCentered ? "center" : "stretch"}
+      justifyContent={isCentered ? "center" : "flex-start"}
+      width="100vw"
+      height="100vh"
+      maxWidth="container.xl"
     >
       {children}
     </Container>
