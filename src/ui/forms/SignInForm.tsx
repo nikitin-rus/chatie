@@ -49,7 +49,7 @@ export function SignInForm({ initialFormData }: SignInFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
+    <Box as="form" onSubmit={handleSubmit(onSubmit)} w="100%">
       <Flex flexDir="column" rowGap="2rem">
         <Flex flexDir="column" rowGap="1.5rem">
           <FormControl
@@ -148,6 +148,6 @@ export function SignInForm({ initialFormData }: SignInFormProps) {
           {t("forms.buttons.submit")}
         </Button>
       </Flex>
-    </form>
+    </Box>
   );
 }

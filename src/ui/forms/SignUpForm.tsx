@@ -48,7 +48,7 @@ export function SignUpForm({ initialFormData }: SignUpFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
+    <Box as="form" onSubmit={handleSubmit(onSubmit)} w="100%">
       <Box display="flex" flexDirection="column" rowGap="2rem">
         <Box display="flex" flexDirection="column" rowGap="1.5rem">
           <FormControl
@@ -147,6 +147,6 @@ export function SignUpForm({ initialFormData }: SignUpFormProps) {
           {t("forms.buttons.submit")}
         </Button>
       </Box>
-    </form>
+    </Box>
   );
 }

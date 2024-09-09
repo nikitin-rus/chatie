@@ -12,11 +12,13 @@ export const Button = defineStyleConfig({
       _active: {
         background: "blue.1",
         color: "grayscale.1",
+        fill: "grayscale.1",
       },
     },
     active: {
       background: "blue.1",
       color: "grayscale.1",
+      fill: "grayscale.1",
 
       _hover: {
         background: "blue.2",
@@ -32,6 +34,10 @@ export const Button = defineStyleConfig({
       height: "3.5rem",
       borderRadius: "15px",
       padding: "1rem 1.25rem",
+    },
+    iconDefault: {
+      width: "2.5rem",
+      height: "2.5rem",
     },
   },
   defaultProps: {
