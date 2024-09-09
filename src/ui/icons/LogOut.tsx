@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-export function Menu(props: SVGProps<SVGSVGElement>) {
+export function LogOut(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

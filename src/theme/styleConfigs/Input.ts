@@ -6,6 +6,9 @@ export const Input = defineStyleConfig({
       field: {
         outline: "blue.1",
         background: "grayscale.2",
+        _placeholder: {
+          color: "grayscale.6",
+        },
       },
     },
   },

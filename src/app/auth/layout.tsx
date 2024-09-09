@@ -1,4 +1,5 @@
 import { Header } from "@/ui/Header";
+import { PageContainer } from "@/ui/PageContainer";
 import type { Metadata } from "next";
 import { PropsWithChildren } from "react";
 

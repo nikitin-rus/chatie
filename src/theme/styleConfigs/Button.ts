@@ -10,9 +10,7 @@ export const Button = defineStyleConfig({
       },
 
       _active: {
-        background: "blue.1",
-        color: "grayscale.1",
-        fill: "grayscale.1",
+        background: "grayscale.5",
       },
     },
     active: {
@@ -38,6 +36,14 @@ export const Button = defineStyleConfig({
     iconDefault: {
       width: "2.5rem",
       height: "2.5rem",
+    },
+    iconBig: {
+      width: "3.5rem",
+      minWidth: "3.5rem",
+      maxWidth: "3.5rem",
+      height: "3.5rem",
+      minHeight: "3.5rem",
+      maxHeight: "3.5rem",
     },
   },
   defaultProps: {

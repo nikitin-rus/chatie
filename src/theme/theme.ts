@@ -67,6 +67,14 @@ export const theme = extendTheme({
       fontWeight: 400,
       lineHeight: "140%",
     },
+    message1: {
+      fontSize: "1.5rem",
+      lineHeight: "180%",
+    },
+    message2: {
+      fontSize: "1.25rem",
+      lineHeight: "180%",
+    },
   },
   colors: {
     blue: {
@@ -79,9 +87,10 @@ export const theme = extendTheme({
       2: "#F7F7F8",
       3: "#F1F1F1",
       4: "#DEDEDE",
-      5: "#9B9B9B",
-      6: "#393939",
-      7: "#000000",
+      5: "#C9C9C9",
+      6: "#9B9B9B",
+      7: "#393939",
+      8: "#000000",
     },
   },
 });

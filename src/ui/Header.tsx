@@ -16,8 +16,6 @@ import paths from "@/paths";
 export function Header() {
   const { t } = useTranslation();
 
-  function handleClose() {}
-
   return (
     <Container
       as="header"
@@ -37,7 +35,7 @@ export function Header() {
           as={NextLink}
           href={paths.root}
           cursor="pointer"
-          color="grayscale.7"
+          color="grayscale.8"
           _hover={{
             textDecoration: "none",
           }}
