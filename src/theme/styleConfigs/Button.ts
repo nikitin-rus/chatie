@@ -29,7 +29,7 @@ export const Button = defineStyleConfig({
   },
   sizes: {
     default: {
-      height: "auto",
+      height: "3.5rem",
       borderRadius: "15px",
       padding: "1rem 1.25rem",
     },

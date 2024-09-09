@@ -14,7 +14,7 @@ export const Input = defineStyleConfig({
       field: {
         borderRadius: "15px",
         padding: "1rem 1.25rem",
-        height: "auto",
+        height: "3.5rem",
       },
     },
   },
