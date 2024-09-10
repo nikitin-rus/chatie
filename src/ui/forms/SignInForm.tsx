@@ -2,7 +2,6 @@
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { signIn } from "@/firebase/auth";
 import regExps from "@/regExps";
 import { Auth } from "@/models";
 import {
@@ -19,6 +18,9 @@ import {
 import { useState } from "react";
 import { VisibilityOff } from "../icons/VisibilityOff";
 import { VisibilityOn } from "../icons/VisibilityOn";
+import { useRouter } from "next/navigation";
+import paths from "@/paths";
+import { signIn } from "@/firebase/auth";
 
 export interface SignInFormProps {
   initialFormData?: Auth;
@@ -27,6 +29,7 @@ export interface SignInFormProps {
 export function SignInForm({ initialFormData }: SignInFormProps) {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const { t } = useTranslation();
+  const router = useRouter();
 
   const {
     register,
@@ -42,6 +45,8 @@ export function SignInForm({ initialFormData }: SignInFormProps) {
     } else {
       console.log("Unfortunately, user hasn't signed in");
     }
+
+    router.push(paths.chats);
   };
 
   function handleVisibilityClick() {

@@ -2,12 +2,17 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged as _onAuthStateChanged,
 } from "firebase/auth";
 
-import firebaseApp from "./init";
 import { Auth } from "@/models";
+import clientApp from "./clientApp";
 
-export const auth = getAuth(firebaseApp);
+export const auth = getAuth(clientApp);
+
+export function onAuthStateChanged(cb: () => void) {
+  return _onAuthStateChanged(auth, cb);
+}
 
 export async function signUp({ email, password }: Auth) {
   try {

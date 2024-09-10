@@ -4,7 +4,7 @@ import { auth } from "./firebase/auth";
 import paths from "./paths";
 import { isPrivateRoute } from "./lib/isPrivateRoute";
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   if (isPrivateRoute(request.nextUrl.pathname) && !auth.currentUser) {
     return NextResponse.redirect(new URL(paths.signin, request.url));
   }

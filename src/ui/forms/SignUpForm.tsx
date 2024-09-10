@@ -2,7 +2,6 @@
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { signUp } from "@/firebase/auth";
 import regExps from "@/regExps";
 import { Auth } from "@/models";
 import {
@@ -18,6 +17,7 @@ import {
 import { useState } from "react";
 import { VisibilityOff } from "../icons/VisibilityOff";
 import { VisibilityOn } from "../icons/VisibilityOn";
+import { signUp } from "@/firebase/auth";
 
 export interface SignUpFormProps {
   initialFormData?: Auth;
