@@ -15,6 +15,6 @@ export const resources = {
 
 i18n
   .use(initReactI18next)
-  .init({ debug: true, fallbackLng: "en", defaultNS, resources });
+  .init({ debug: true, fallbackLng: "ru", defaultNS, resources });
 
 export default i18n;

@@ -19,6 +19,17 @@ export default {
         signIn: "Sign In",
       },
     },
+    chats: {
+      menu: {
+        settings: "Settings",
+        logOut: "Log Out",
+      },
+      sidebar: {
+        noChats: "You have no chats yet! 😢",
+        findUsers: "You could find users by usernames",
+        userName: "Username",
+      },
+    },
   },
   forms: {
     buttons: {

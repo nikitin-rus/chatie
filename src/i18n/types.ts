@@ -17,6 +17,17 @@ export interface AppDictionary {
         signIn: string;
       };
     };
+    chats: {
+      sidebar: {
+        userName: string;
+        noChats: string;
+        findUsers: string;
+      };
+      menu: {
+        settings: string;
+        logOut: string;
+      };
+    };
   };
   forms: {
     inputs: {

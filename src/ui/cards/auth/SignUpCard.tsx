@@ -4,7 +4,7 @@ import { Text, Link } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import NextLink from "next/link";
 import { SignUpForm, SignUpFormProps } from "@/ui/forms/SignUpForm";
-import { AuthCard } from "../AuthCard";
+import { AuthCard } from "./AuthCard";
 import paths from "@/paths";
 
 interface SignUpCardProps extends SignUpFormProps {}

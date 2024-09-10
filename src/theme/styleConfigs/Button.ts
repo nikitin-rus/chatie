@@ -35,7 +35,11 @@ export const Button = defineStyleConfig({
     },
     iconDefault: {
       width: "2.5rem",
+      minWidth: "2.5rem",
+      maxWidth: "2.5rem",
       height: "2.5rem",
+      minHeight: "2.5rem",
+      maxHeight: "2.5rem",
     },
     iconBig: {
       width: "3.5rem",

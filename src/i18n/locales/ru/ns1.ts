@@ -19,6 +19,17 @@ export default {
         signIn: "Войдите",
       },
     },
+    chats: {
+      menu: {
+        settings: "Настройки",
+        logOut: "Выйти",
+      },
+      sidebar: {
+        noChats: "У вас еще нет чатов! 😢",
+        findUsers: "Вы можете найти пользователей по username",
+        userName: "Username",
+      },
+    },
   },
   forms: {
     buttons: {

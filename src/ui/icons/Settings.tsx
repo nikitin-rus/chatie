@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-export function Send(props: SVGProps<SVGSVGElement>) {
+export function Settings(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
