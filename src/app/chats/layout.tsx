@@ -1,5 +1,5 @@
+import { Sidebar } from "@/ui/cards/chats/Sidebar";
 import { PageContainer } from "@/ui/PageContainer";
-import { Sidebar } from "@/ui/Sidebar";
 import { Grid, GridItem } from "@chakra-ui/react";
 import { Metadata } from "next";
 import { PropsWithChildren } from "react";

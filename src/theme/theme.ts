@@ -5,6 +5,7 @@ import { Link } from "./styleConfigs/Link";
 import { Card } from "./styleConfigs/Card";
 import { FormError } from "./styleConfigs/FormError";
 import { FormLabel } from "./styleConfigs/FormLabel";
+import { Menu } from "./styleConfigs/Menu";
 
 export const theme = extendTheme({
   styles: {
@@ -24,6 +25,7 @@ export const theme = extendTheme({
     FormLabel,
     FormError,
     Card,
+    Menu,
   },
   textStyles: {
     h1: {

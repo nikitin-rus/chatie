@@ -1,10 +1,16 @@
 "use client";
 
-import { Flex } from "@chakra-ui/react";
-import { MenuItem } from "./MenuItem";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  IconButton,
+} from "@chakra-ui/react";
 import { Settings } from "@/ui/icons/Settings";
 import { useTranslation } from "react-i18next";
 import { LogOut } from "@/ui/icons/LogOut";
+import { Menu as MenuIcon } from "@/ui/icons/Menu";
 
 export function MenuCard() {
   const { t } = useTranslation();
@@ -14,23 +20,22 @@ export function MenuCard() {
   function handleLogOut() {}
 
   return (
-    <Flex
-      flexDir="column"
-      boxShadow="2xl"
-      borderRadius="15px"
-      overflow="hidden"
-      as="nav"
-    >
-      <MenuItem
-        icon={<Settings />}
-        title={t("pages.chats.menu.settings")}
-        onClick={handleSettingsClick}
+    <Menu>
+      <MenuButton
+        as={IconButton}
+        size="iconBig"
+        aria-label="open menu icon"
+        icon={<MenuIcon />}
+        isRound={true}
       />
-      <MenuItem
-        icon={<LogOut />}
-        title={t("pages.chats.menu.logOut")}
-        onClick={handleLogOut}
-      />
-    </Flex>
+      <MenuList>
+        <MenuItem icon={<Settings />} onClick={handleSettingsClick}>
+          {t("pages.chats.menu.settings")}
+        </MenuItem>
+        <MenuItem icon={<LogOut />} onClick={handleLogOut}>
+          {t("pages.chats.menu.logOut")}
+        </MenuItem>
+      </MenuList>
+    </Menu>
   );
 }
